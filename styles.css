@@ -193,3 +193,23 @@ header, section, footer {
         transform: translateY(0);
     }
 }
+
+/* Media Queries para hacer la página responsive */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container img {
+        height: 60px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .foto-anexo img {
+        width: 220px; /* Ajuste de imágenes en pantallas más pequeñas */
+    }
+}
