@@ -41,24 +41,26 @@ header h2 {
     margin: 5px 0;
 }
 
-/* Menú de navegación */
+/* Estilos generales del menú */
 nav {
     background: #005f73;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
+    position: relative;
 }
 
-nav ul {
+.nav-links {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-nav ul li {
-    display: inline;
+.nav-links li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -67,8 +69,19 @@ nav ul li a {
     transition: background 0.3s;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     background: #0a9396;
+}
+
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto en pantallas grandes */
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 15px;
 }
 
 /* Secciones */
@@ -194,22 +207,44 @@ header, section, footer {
     }
 }
 
-/* Media Queries para hacer la página responsive */
+
+
+/* Diseño responsive */
 @media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
     header {
         flex-direction: column;
         text-align: center;
     }
 
-    .logo-container img {
-        height: 60px;
+    .nav-links {
+        display: none; /* Ocultamos el menú por defecto */
+        flex-direction: column;
+        background: #005f73;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
     }
 
-    nav ul {
-        flex-direction: column;
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostramos el menú cuando esté activo */
     }
 
     .foto-anexo img {
         width: 220px; /* Ajuste de imágenes en pantallas más pequeñas */
+    }
+
+    .logo-container img {
+        height: 60px;
     }
 }
